@@ -2,7 +2,7 @@
 
 function Button({ children, type, onClick, customClass, disabled }) {
   const defaultClass =
-    "rounded-xl bg-[#5E17EB] text-white px-4 py-2 md:h-10 font-semibold";
+    "rounded-xl bg-[#2AD5A5] text-white px-4 py-2 md:h-10 font-semibold";
   const buttonClass = customClass
     ? `${defaultClass} ${customClass}`
     : defaultClass;

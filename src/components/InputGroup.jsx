@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeSlash, faEye } from "@fortawesome/free-solid-svg-icons";
@@ -19,7 +20,7 @@ function InputGroup({
   };
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={id} className="text-sm md:text-lg font-semibold">
+      <label htmlFor={id} className="text-sm md:text-base">
         {title}
       </label>
       <div className="relative flex">
@@ -29,9 +30,10 @@ function InputGroup({
           id={id}
           onChange={onChange}
           value={value}
-          required={isPasswordInput}
+          // required={isPasswordInput}
+          required
           disabled={disable}
-          className="rounded-xl w-full px-4 py-2 border focus:outline-none focus:ring focus:border-[#5E17EB]"
+          className="rounded-xl w-full px-4 py-2 border focus:outline-none focus:border-[#2AD5A5]"
         />
         {isPasswordInput && (
           <button
