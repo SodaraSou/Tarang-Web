@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Header() {
   return (
-    <header className="w-full bg-[#d9d9d9]">
+    <header className="w-full bg-[#d9d9d9] fixed top-0 left-0">
       <div className="max-w-7xl mx-auto p-6 xl:px-0 flex justify-between">
         <Link href="/">
           <Image src="/tarang_logo.png" alt="logo" width={150} height={50} />

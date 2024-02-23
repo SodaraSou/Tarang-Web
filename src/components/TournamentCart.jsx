@@ -100,8 +100,8 @@ function TournamentCard() {
         </div>
       </div>
       <div className="flex gap-4">
-        <Button customClass="w-full bg-[#eaeaea] text-black">See Detail</Button>
-        <Button customClass="w-full bg-[#5BDC70]">Join The Match</Button>
+        <Button customClass="w-full">See Detail</Button>
+        <Button customClass="w-full">Join The Match</Button>
       </div>
     </div>
   );
