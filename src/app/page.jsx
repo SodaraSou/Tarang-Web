@@ -3,7 +3,7 @@ import TournamentCard from "@/components/TournamentCart";
 
 function Home() {
   return (
-    <div className="bg-[#f5f5f5] flex flex-col gap-10 p-10 xl:px-0">
+    <div className="bg-[#f5f5f5] flex flex-col gap-10 p-10 xl:px-0 mt-[98px]">
       <div className="bg-[#d9d9d9] max-w-7xl h-[300px]"></div>
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-10">
         <div className="bg-[#d9d9d9] w-full h-[200px]"></div>
