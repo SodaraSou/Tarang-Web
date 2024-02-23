@@ -1,12 +1,10 @@
-import React from "react";
-
-function CartVenue() {
+function VenueCard() {
   return (
-    <div className="w-[416px] overflow-hidden h-[431px] border-2 flex flex-col gap-4">
-      <div className="w-[416px] h-[300px] bg-[#eaeaea]">
-        <img src="/" alt="photo" className="w-full h-full" />
+    <div className="flex flex-col w-full bg-white border border-gray-200 shadow rounded-xl">
+      <div className="w-full h-[300px] bg-[#eaeaea]">
+        {/* <img src="/" alt="photo" className="w-full h-full" /> */}
       </div>
-      <div className="flex flex-col px-4 gap-2">
+      <div className="flex flex-col p-4 gap-2">
         <div className="flex justify-between">
           <h1 className="font-bold text-xl">Name of the Court</h1>
           <div className="flex gap-2">
@@ -37,11 +35,11 @@ function CartVenue() {
             <p className="font-bold">4.5(26)</p>
           </div>
         </div>
-        <h1 className="text-lg font-semibold">type :</h1>
+        <h1 className="text-lg font-semibold">Type :</h1>
         <h1 className="font-semibold text-sm">Size of the Court :</h1>
       </div>
     </div>
   );
 }
 
-export default CartVenue;
+export default VenueCard;
