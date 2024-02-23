@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
+import { register } from "@/services/actions";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./signUp.module.css";
@@ -11,7 +12,7 @@ function SignUp() {
   const initialState = {
     message: "",
   };
-  const [state, formAction] = useFormState(login, initialState);
+  const [state, formAction] = useFormState(register, initialState);
   // const [inputData, setInputData] = useState({
   //   name: "",
   //   email: "",
@@ -40,24 +41,28 @@ function SignUp() {
           </h1>
           <form action={formAction} className="flex flex-col gap-4">
             <InputGroup
-              title="Username"
+              name="name"
+              title="Name"
               type="text"
-              placeholder="Username"
+              placeholder="Name"
               id="name"
             />
             <InputGroup
+              name="email"
               title="Email"
               type="email"
               placeholder="example@mail.com"
               id="email"
             />
             <InputGroup
+              name="password"
               title="Password"
               type="password"
               placeholder="********"
               id="password"
             />
             <InputGroup
+              name="password_confirmation"
               title="Confirm Password"
               type="password"
               placeholder="********"

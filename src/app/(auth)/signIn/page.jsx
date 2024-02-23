@@ -64,7 +64,7 @@ function SignInPage() {
             <Button type="submit">Sign In</Button>
           </form>
           <p className="text-center mt-4 text-sm md:text-base">
-            Don't Have Account?{" "}
+            Don&apos;t Have Account?{" "}
             <Link href="/signUp" className="underline">
               SIGN UP
             </Link>
