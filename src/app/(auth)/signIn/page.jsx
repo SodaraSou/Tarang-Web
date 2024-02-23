@@ -1,26 +1,33 @@
 "use client";
-import { useState } from "react";
+// import { useState } from "react";
+import { useFormState } from "react-dom";
+import { login } from "@/services/actions";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./signIn.module.css";
 import InputGroup from "@/components/InputGroup";
 import Button from "@/components/Button";
 
+const initialState = {
+  message: "",
+};
+
 function SignInPage() {
-  const [inputData, setInputData] = useState({
-    email: "",
-    password: "",
-  });
-  const onChange = (e) => {
-    e.preventDefault();
-    setInputData((prevState) => ({
-      ...prevState,
-      [e.target.id]: e.target.value,
-    }));
-  };
-  const onSubmit = (e) => {
-    e.preventDefault();
-  };
+  const [state, formAction] = useFormState(login, initialState);
+  // const [inputData, setInputData] = useState({
+  //   email: "",
+  //   password: "",
+  // });
+  // const onChange = (e) => {
+  //   e.preventDefault();
+  //   setInputData((prevState) => ({
+  //     ...prevState,
+  //     [e.target.id]: e.target.value,
+  //   }));
+  // };
+  // const onSubmit = (e) => {
+  //   e.preventDefault();
+  // };
   return (
     <section className="max-w-5xl min-h-screen mx-auto flex flex-col justify-center">
       <div className="flex px-10 md:h-[500px]">
@@ -31,18 +38,20 @@ function SignInPage() {
           <h1 className="font-bold text-2xl md:text-4xl mb-4 md:mb-10">
             Sign In
           </h1>
-          <form onSubmit={onSubmit} className="flex flex-col gap-4">
+          <form action={formAction} className="flex flex-col gap-4">
             <InputGroup
               title="Email"
               type="email"
               placeholder="example@mail.com"
               id="email"
+              name={"email"}
             />
             <InputGroup
               title="Password"
               type="password"
               placeholder="********"
               id="password"
+              name={"password"}
             />
             <div className="w-full flex justify-end">
               <Link
@@ -54,7 +63,7 @@ function SignInPage() {
             </div>
             <Button type="submit">Sign In</Button>
           </form>
-          <p className="text-center mt-4 md:mt-10 text-sm md:text-base">
+          <p className="text-center mt-4 text-sm md:text-base">
             Don't Have Account?{" "}
             <Link href="/signUp" className="underline">
               SIGN UP

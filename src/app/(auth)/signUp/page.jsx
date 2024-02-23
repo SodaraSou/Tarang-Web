@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useFormState, useFormStatus } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./signUp.module.css";
@@ -7,22 +8,26 @@ import InputGroup from "@/components/InputGroup";
 import Button from "@/components/Button";
 
 function SignUp() {
-  const [inputData, setInputData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
-  const onChange = (e) => {
-    e.preventDefault();
-    setInputData((prevState) => ({
-      ...prevState,
-      [e.target.id]: e.target.value,
-    }));
+  const initialState = {
+    message: "",
   };
-  const onSubmit = (e) => {
-    e.preventDefault();
-  };
+  const [state, formAction] = useFormState(login, initialState);
+  // const [inputData, setInputData] = useState({
+  //   name: "",
+  //   email: "",
+  //   password: "",
+  //   password_confirmation: "",
+  // });
+  // const onChange = (e) => {
+  //   e.preventDefault();
+  //   setInputData((prevState) => ({
+  //     ...prevState,
+  //     [e.target.id]: e.target.value,
+  //   }));
+  // };
+  // const onSubmit = (e) => {
+  //   e.preventDefault();
+  // };
   return (
     <section className="max-w-5xl min-h-screen mx-auto flex flex-col justify-center">
       <div className="flex p-10">
@@ -33,12 +38,12 @@ function SignUp() {
           <h1 className="font-bold text-2xl md:text-4xl mb-4 md:mb-10">
             Sign Up
           </h1>
-          <form onSubmit={onSubmit} className="flex flex-col gap-4">
+          <form action={formAction} className="flex flex-col gap-4">
             <InputGroup
               title="Username"
               type="text"
               placeholder="Username"
-              id="username"
+              id="name"
             />
             <InputGroup
               title="Email"
@@ -56,7 +61,7 @@ function SignUp() {
               title="Confirm Password"
               type="password"
               placeholder="********"
-              id="confirmPassword"
+              id="password_confirmation"
             />
             <Button type="submit">Sign Up</Button>
           </form>
