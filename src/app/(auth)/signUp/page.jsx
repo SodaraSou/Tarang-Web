@@ -30,7 +30,7 @@ function SignUp() {
   //   e.preventDefault();
   // };
   return (
-    <section className="max-w-5xl min-h-screen mx-auto flex flex-col justify-center">
+    <section className="max-w-5xl h-[90vh] mx-auto flex flex-col justify-center">
       <div className="flex p-10">
         <div className={styles.imgContainer}>
           <Image src="/logo_latin.png" alt="logo" fill className={styles.img} />

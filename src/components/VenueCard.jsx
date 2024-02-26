@@ -1,6 +1,11 @@
+import Link from "next/link";
+
 function VenueCard() {
   return (
-    <div className="flex flex-col w-full bg-white border border-gray-200 shadow rounded-xl">
+    <Link
+      href="/venue"
+      className="flex flex-col w-full bg-white border border-gray-200 shadow rounded-xl"
+    >
       <div className="w-full h-[300px] bg-[#eaeaea]">
         {/* <img src="/" alt="photo" className="w-full h-full" /> */}
       </div>
@@ -38,7 +43,7 @@ function VenueCard() {
         <h1 className="text-lg font-semibold">Type :</h1>
         <h1 className="font-semibold text-sm">Size of the Court :</h1>
       </div>
-    </div>
+    </Link>
   );
 }
 

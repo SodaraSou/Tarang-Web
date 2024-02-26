@@ -1,5 +1,5 @@
 function NotFoundPage() {
-  return <div>NotFoundPage</div>;
+  return <div className="h-[90vh]">NotFoundPage</div>;
 }
 
 export default NotFoundPage;
