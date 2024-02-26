@@ -1,5 +1,5 @@
 function loading() {
-  return <div>loading</div>;
+  return <div className="h-[90vh]">loading</div>;
 }
 
 export default loading;
