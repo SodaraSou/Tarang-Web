@@ -1,14 +1,17 @@
+import Button from "@/components/Button";
+import Input from "@/components/Input";
+
 function page() {
 	return (
-		<div className="max-w-5xl mx-auto mt-[98px]">
-			<div className="bg-[#EAEAEA] h-52">Banner</div>
+		<div className="max-w-4xl mx-auto mt-[98px]">
+			<div className="bg-[#EAEAEA] h-52 mt-[150px]">Banner</div>
 			<div className="w-full p-10 space-y-5">
-				<h1 className="text-2xl font-bold text-center">
+				<h1 className="text-4xl font-bold text-center">
 					Court Reservation Form
 				</h1>
 				<p className="text-center">Please complete the form below</p>
-				<div className="flex w-full">
-					<div className="flex flex-col w-full">
+				<div className="flex w-full gap-4">
+					{/* <div className="flex flex-col w-full">
 						<label htmlFor="name" className="text-sm md:text-base">
 							Name:
 						</label>
@@ -17,8 +20,11 @@ function page() {
 							type="text"
 							className="rounded-xl w-full px-4 py-2 border focus:outline-none focus:border-[#2AD5A5]"
 						/>
+					</div> */}
+					<div className="w-full">
+						<Input id="name" type="text" title="Name" />
 					</div>
-					<div className="flex flex-col w-full ">
+					<div className="flex flex-col w-full gap-2">
 						<label htmlFor="category" className="text-sm md:text-base">
 							Category:
 						</label>
@@ -43,7 +49,7 @@ function page() {
 						className="rounded-xl w-full px-4 py-2 border focus:outline-none focus:border-[#2AD5A5]"
 					/>
 				</div>
-				<div className="w-full flex">
+				<div className="w-full flex gap-4">
 					<div className="flex flex-col w-full">
 						<label htmlFor="nameOfCourt" className="text-sm md:text-base">
 							Date:
@@ -76,38 +82,43 @@ function page() {
 					<label htmlFor="nameOfCourt" className="text-sm md:text-base">
 						Type of Your Reservation:
 					</label>
-					<div className="w-full flex">
+					<div className="w-full flex gap-4">
 						<input
 							type="button"
 							value="I have monthly subscription"
 							className="rounded-xl w-full px-4 py-2 border bg-white focus:outline-none focus:border-[#2AD5A5]"
-							onClick={null}
+							onChange={null}
 						/>
 						<input
-							type="button"
+							type="radio"
 							value="One time rental"
 							className="rounded-xl w-full px-4 py-2 border bg-white focus:outline-none focus:border-[#2AD5A5]"
 							onClick={null}
 						/>
 					</div>
 				</div>
-				<div className="flex flex-col">
-					<label htmlFor="nameOfCourt" className="text-sm md:text-base">
-						Contact:
-					</label>
-					<input type="time" className="rounded-xl w-full px-4 py-2 border" />
-				</div>
-				<div className="flex flex-col">
-					<label htmlFor="nameOfCourt" className="text-sm md:text-base">
-						Estimated Attendances:
-					</label>
-					<input type="time" className="rounded-xl w-full px-4 py-2 border" />
+				<div className="flex w-full gap-4">
+					<div className="flex flex-col w-full">
+						<label htmlFor="nameOfCourt" className="text-sm md:text-base">
+							Contact:
+						</label>
+						<input type="tel" className="rounded-xl w-full px-4 py-2 border" />
+					</div>
+					<div className="flex flex-col w-full">
+						<label htmlFor="nameOfCourt" className="text-sm md:text-base">
+							Estimated Attendances:
+						</label>
+						<input
+							type="number"
+							className="rounded-xl w-full px-4 py-2 border"
+						/>
+					</div>
 				</div>
 				<div className="flex flex-col">
 					<label htmlFor="nameOfCourt" className="text-sm md:text-base">
 						Optional:
 					</label>
-					<div className="w-full flex">
+					<div className="w-full flex gap-4">
 						<input
 							type="button"
 							value="Find a team to play againist"
@@ -124,13 +135,18 @@ function page() {
 				</div>
 				<div className="flex flex-col">
 					<label htmlFor="nameOfCourt" className="text-sm md:text-base">
-						Optional:
+						Your team:
 					</label>
-					<select name="team" id="team">
+					<select
+						name="team"
+						id="team"
+						className="rounded-xl w-full px-4 py-2 border focus:outline-none focus:border-[#2AD5A5]"
+					>
 						<option value="FC Barcelona">FC Barcelona</option>
 						<option value="Dara CoCo">Dara CoCo</option>
 					</select>
 				</div>
+				<Button customClass="w-full">Submit</Button>
 			</div>
 		</div>
 	);
